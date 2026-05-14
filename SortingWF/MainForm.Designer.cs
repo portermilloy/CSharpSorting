@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            displayPanel = new Panel();
+            displayPanel = new DoubleBufferedPanel();
             SuspendLayout();
             // 
             // displayPanel
@@ -38,7 +38,7 @@
             displayPanel.Name = "displayPanel";
             displayPanel.Size = new Size(800, 450);
             displayPanel.TabIndex = 0;
-            displayPanel.Paint += this.displayPanel_Paint;
+            displayPanel.Paint += displayPanel_Paint;
             // 
             // MainForm
             // 
@@ -46,6 +46,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
             Controls.Add(displayPanel);
+            DoubleBuffered = true;
             Name = "MainForm";
             Text = "Form1";
             ResumeLayout(false);

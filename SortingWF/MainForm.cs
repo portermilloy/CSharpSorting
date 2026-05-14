@@ -11,6 +11,8 @@ namespace SortingWF
             InitializeComponent();
             Sorting.BozoSort bs = new Sorting.BozoSort(displaySort);
 
+            Random.Shared.Shuffle(testArr);
+
             bs.sort(testArr);
         }
 
