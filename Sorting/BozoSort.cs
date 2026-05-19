@@ -12,10 +12,10 @@ namespace Sorting
         {
         }
 
-        public override async Task<int[]> sort(int[] arr)
+        public override async Task<int[]> sort(int[] arr, CancellationToken token)
         {
             int[] sortedArray = new int[arr.Length];
-
+            
             Random rnd = new Random();
             bool sorted = false;
             while (!sorted)
@@ -28,8 +28,9 @@ namespace Sorting
                 arr[b] = t;
                 await Task.Delay(500);
                 displayFunc(arr);
+                token.ThrowIfCancellationRequested();
 
-                if(isSorted(arr))
+                if (isSorted(arr))
                 {
                     sorted = true;
                 }

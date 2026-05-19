@@ -12,7 +12,7 @@ namespace Sorting
         {
         }
 
-        public override async Task<int[]> sort(int[] arr)
+        public override async Task<int[]> sort(int[] arr, CancellationToken token)
         {
             this.displayFunc(arr);
 
@@ -27,6 +27,7 @@ namespace Sorting
 
                     await Task.Delay(500);
                     this.displayFunc(arr);
+                    token.ThrowIfCancellationRequested();
                 }
             }
             return arr;

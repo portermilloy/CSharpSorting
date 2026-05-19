@@ -13,6 +13,6 @@ namespace Sorting
         {
             this.displayFunc = display;
         }
-        public abstract Task<int[]> sort(int[] arr);
+        public abstract Task<int[]> sort(int[] arr, CancellationToken token);
     }
 }

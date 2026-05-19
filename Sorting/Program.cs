@@ -4,11 +4,12 @@
     {
         static void Main(string[] args)
         {
+            CancellationTokenSource cts = new CancellationTokenSource();
             int[] arr = new int[5] { 3, 4, 0, 1, 2 };
 
             BozoSort bs2 = new BozoSort(printArr);
 
-            arr = bs2.sort(arr).Result;
+            arr = bs2.sort(arr, cts.Token).Result;
 
             /*BubbleSort bs = new BubbleSort(printArr);
 
